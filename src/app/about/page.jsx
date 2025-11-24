@@ -5,14 +5,14 @@ export default function AboutPage() {
         About EventHorizon
       </h1>
 
-      <p className="max-w-7xl text-lg md:text-xl text-gray-300 leading-relaxed mb-12 text-center">
+      <p className="max-w-7xl text-lg md:text-xl text-gray-400 leading-relaxed mb-12 text-center">
         EventHorizon is a futuristic event ticketing and event management platform 
         where technology, creativity, and cosmic energy align. Whether you are hosting 
         a concert, a conference, or a small gathering that might accidentally collapse 
         into a micro-black hole  we have got the tools to make your event unforgettable.
       </p>
 
-      <section className="max-w-7xl space-y-6 text-gray-300">
+      <section className="max-w-7xl space-y-6 text-gray-400">
         <div>
           <h2 className="text-2xl font-semibold text-white mb-2">🚀 Our Mission</h2>
           <p>
