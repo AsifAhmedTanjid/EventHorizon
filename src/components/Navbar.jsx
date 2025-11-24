@@ -1,6 +1,7 @@
-import Image from "next/image";
+
 import Link from "next/link";
 import React from "react";
+import Logo from "./Logo";
 
 const Navbar = () => {
   const links = (
@@ -48,10 +49,10 @@ const Navbar = () => {
   {links}
           </ul>
         </div>
-        <a className="-mt-1 text-xl flex items-center">
+        <a className="-mt-1 text-xl ">
           {" "}
-          <Image src="/logo1.png" alt="brand kogo" width={64} height={64} />
-          <h1>Event Horizon</h1>
+    <Logo></Logo>
+         
         </a>
       </div>
       <div className="navbar-center hidden lg:flex">
