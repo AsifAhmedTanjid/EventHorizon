@@ -1,6 +1,7 @@
 import Categories from '@/components/Categories';
 import Hero from '@/components/Hero';
 import HowItWorks from '@/components/HowItWorks';
+import Newsletter from '@/components/Newsletter';
 import Testimonials from '@/components/Testimonials';
 import React from 'react';
 
@@ -11,6 +12,7 @@ const page = () => {
             <HowItWorks></HowItWorks>
             <Categories></Categories>
             <Testimonials></Testimonials>
+            <Newsletter></Newsletter>
         </div>
     );
 };

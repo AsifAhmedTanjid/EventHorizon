@@ -62,7 +62,8 @@ export default function ContactPage() {
 
           <button
             className="w-full inline-flex items-center justify-center px-6 py-2 rounded-md border border-gray-700 text-gray-200 font-medium
-                         transition-colors duration-200 hover:text-blue-400 hover:border-blue-500"
+                         transition-colors duration-200 hover:text-blue-400 hover:border-blue-500
+                         hover:cursor-pointer"
           >
             Send Message
           </button>
