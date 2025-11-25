@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center bg-black text-white -my-20">
+    <div className="min-h-screen flex items-center justify-center bg-black text-white -my-18">
       <div className="max-w-4xl w-full grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
         {/* Visual */}
         <div className="flex items-center justify-center">
@@ -70,7 +70,7 @@ export default function NotFound() {
 
           <p className="mt-3 text-gray-300 text-lg md:text-xl leading-relaxed">
             The page <span className="font-medium text-white">exists</span> and{" "}
-            <span className="font-medium text-white">doesn’t exist</span> — Schrödinger would be proud.
+            <span className="font-medium text-white">doesn&apos;t exist</span> — Schrödinger would be proud.
           </p>
 
           <p className="mt-4 text-gray-400">
