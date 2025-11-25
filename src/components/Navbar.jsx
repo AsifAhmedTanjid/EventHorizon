@@ -98,9 +98,9 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn rounded-full px-7 bg-white text-black  hover:opacity-90">
+        <Link href="/login" className="btn rounded-full px-7 bg-white text-black  hover:opacity-90">
           Login
-        </a>
+        </Link>
       </div>
     </div>
   );
