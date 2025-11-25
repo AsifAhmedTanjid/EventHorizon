@@ -74,7 +74,7 @@ const Register = () => {
   };
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-6">
+    <div className="flex items-center justify-center p-6">
       <Toaster position="top-center" />
       <div className="w-full max-w-md p-8 bg-gray-800 rounded-xl shadow-xl">
         <h1 className="text-3xl font-bold text-center text-white mb-6">
@@ -126,7 +126,7 @@ const Register = () => {
                 className="w-full px-4 py-2 rounded-lg bg-gray-700 text-white focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
-                className="absolute top-2 right-2 text-gray-400"
+                className="absolute top-3 right-3 text-gray-400 hover:cursor-pointer"
                 onClick={handleTogglePassword}
               >
                 {showPassword ? <FaEye /> : <FaEyeSlash />}
@@ -136,7 +136,7 @@ const Register = () => {
 
           {error && <p className="text-red-500 text-sm">{error}</p>}
 
-          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition">
+          <button className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 rounded-lg transition hover:cursor-pointer">
             Register
           </button>
         </form>
@@ -149,7 +149,7 @@ const Register = () => {
 
         <button
           onClick={handleGoogleSignin}
-          className="w-full bg-gray-200 text-gray-900 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-300 transition"
+          className="w-full bg-gray-200 text-gray-900 py-2 rounded-lg flex items-center justify-center gap-2 hover:bg-gray-300 transition hover:cursor-pointer"
         >
           <svg
             aria-label="Google logo"

@@ -1,11 +1,26 @@
 "use client";
 import Link from "next/link";
-import React from "react";
+import React, { useContext } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
+import { AuthContext } from "@/context/AuthContext";
 
 const Navbar = () => {
   const pathname = usePathname();
+
+  const { user, signoutUserFunc, setUser, loading, setLoading } =
+    useContext(AuthContext);
+  const handleSignout = () => {
+    signoutUserFunc()
+      .then(() => {
+        toast.success("Signout successful");
+        setUser(null);
+        setLoading(false);
+      })
+      .catch((e) => {
+        toast.error(e.message);
+      });
+  };
 
   const links = [
     { name: "Home", href: "/" },
@@ -98,7 +113,10 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
-        <Link href="/login" className="btn rounded-full px-7 bg-white text-black  hover:opacity-90">
+        <Link
+          href="/login"
+          className="btn rounded-full px-7 bg-white text-black  hover:opacity-90"
+        >
           Login
         </Link>
       </div>
