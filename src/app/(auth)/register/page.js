@@ -4,11 +4,16 @@ import { FaEye, FaEyeSlash } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { AuthContext } from "@/context/AuthContext";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 const Register = () => {
-  const { createUser, setLoading, updateProfileFunc, signInWithGoogleFunc, setUser } =
-    useContext(AuthContext);
+  const {
+    createUser,
+    setLoading,
+    updateProfileFunc,
+    signInWithGoogleFunc,
+    setUser,
+  } = useContext(AuthContext);
   const router = useRouter();
 
   const [error, setError] = useState("");
@@ -75,7 +80,7 @@ const Register = () => {
 
   return (
     <div className="flex items-center justify-center p-6">
-      <Toaster position="top-center" />
+      {/* <Toaster position="top-center" /> */}
       <div className="w-full max-w-md p-8 bg-gray-800 rounded-xl shadow-xl">
         <h1 className="text-3xl font-bold text-center text-white mb-6">
           Create your EventHorizon account

@@ -4,6 +4,9 @@ import React, { useContext } from "react";
 import Logo from "./Logo";
 import { usePathname } from "next/navigation";
 import { AuthContext } from "@/context/AuthContext";
+import Image from "next/image";
+import { MoonLoader } from "react-spinners";
+import toast from "react-hot-toast";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -112,13 +115,57 @@ const Navbar = () => {
           ))}
         </ul>
       </div>
-      <div className="navbar-end">
-        <Link
-          href="/login"
-          className="btn rounded-full px-7 bg-white text-black  hover:opacity-90"
-        >
-          Login
-        </Link>
+      <div className="navbar-end flex items-center h-12">
+        {loading ? (
+          <MoonLoader
+            color="#415aff"
+            size={5}
+            cssOverride={{ display: "inline-block" }}
+          />
+        ) : user ? (
+          <div className="dropdown dropdown-end pr-2">
+            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+              <div className="w-10 rounded-full">
+                <Image
+                  height={40}
+                  width={40}
+                  src={user.photoURL}
+                  alt={user.displayName}
+                />
+              </div>
+            </label>
+            <ul
+              tabIndex={0}
+              className="menu menu-sm dropdown-content mt-3 p-2 shadow bg-gray-900 backdrop-blur-md rounded-box w-52"
+            >
+              <div className="mb-2 text-center">
+                <h1 className="text-sm font-semibold">{user?.displayName}</h1>
+                <h5 className="text-xs font-semibold">{user?.email}</h5>
+              </div>
+              <li>
+                <Link href="/addevent">Add Event</Link>
+              </li>
+              <li>
+                <Link href="/manageevent">Manage Event</Link>
+              </li>
+              <li>
+                <button
+                  onClick={handleSignout}
+                  className="text-red-500 font-bold hover:text-red-700 w-full text-left"
+                >
+                  Logout
+                </button>
+              </li>
+            </ul>
+          </div>
+        ) : (
+          <Link
+            href="/login"
+            className="btn rounded-full px-7 bg-white text-black  hover:opacity-90"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
