@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Logo from "./Logo";
 
 export default function Footer() {
@@ -5,7 +6,7 @@ export default function Footer() {
     <footer className="w-full bg-black border-t border-neutral-800 mt-20 px-6">
       <div className="max-w-7xl mx-auto py-12 grid md:grid-cols-3 gap-10">
         <div>
-          <h2 className="text-xl "><Logo></Logo></h2>
+          <Link href="/" className="text-xl "><Logo></Logo></Link>
           <p className="mt-3 text-sm text-gray-500">
             Navigating events across space, time, and beyond.
           </p>

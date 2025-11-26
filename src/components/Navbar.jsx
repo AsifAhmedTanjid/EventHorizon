@@ -91,10 +91,10 @@ const Navbar = () => {
             </ul>
           </ul>
         </div>
-        <a className="-mt-1 text-xl ">
+        <Link href="/" className="-mt-1 text-xl ">
           {" "}
           <Logo></Logo>
-        </a>
+        </Link>
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="flex gap-6 px-1">
