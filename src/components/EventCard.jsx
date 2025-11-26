@@ -30,7 +30,7 @@ const EventCard = ({ event }) => {
         <p className="text-gray-400 text-sm mb-2">
           <span className="font-semibold">Category:</span> {event.category}
         </p>
-        <p className="text-gray-300 text-sm mb-4">{shortDescription}</p>
+        <p className="text-gray-300 text-sm mb-4 min-h-10">{shortDescription}</p>
         <div className="flex justify-between items-center text-sm font-medium mb-4">
           <span>Tickets Remaining: {event.ticketsCount}</span>
           <span>Price: {event.ticketPrice} BDT</span>
