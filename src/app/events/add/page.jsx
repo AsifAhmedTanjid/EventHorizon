@@ -23,7 +23,7 @@ const AddEvent = () => {
       createdAt: new Date(),
     };
 
-    fetch("http://localhost:3000/events", {
+    fetch("https://event-horizon-server.vercel.app/events", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

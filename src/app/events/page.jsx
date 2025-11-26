@@ -2,7 +2,7 @@ import React from "react";
 import EventCard from "@/components/EventCard";
 
 const EventPage = async () => {
-  const res = await fetch("http://localhost:3000/events");
+  const res = await fetch("https://event-horizon-server.vercel.app/events");
   const events = await res.json();
 
   return (
