@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import React from "react";
 
 const EventCard = ({ event }) => {
@@ -34,10 +35,10 @@ const EventCard = ({ event }) => {
           <span>Tickets Remaining: {event.ticketsCount}</span>
           <span>Price: {event.ticketPrice} BDT</span>
         </div>
-        <button className="w-full border border-blue-500  text-white py-2 rounded-md hover:border-blue-500 hover:bg-blue-500 hover:text-black
+        <Link href={`events/${event._id}`} className=" btn w-full border border-blue-500  text-white py-2 rounded-md hover:border-blue-500 hover:bg-blue-500 hover:text-black
                          hover:cursor-pointer transition">
           View Details
-        </button>
+        </Link>
       </div>
     </div>
   );
