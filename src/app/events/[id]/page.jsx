@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default async function EventDetails({ params }) {
   const { id } = await params;
@@ -27,12 +28,12 @@ export default async function EventDetails({ params }) {
         {/* Card Wrapper */}
         <div className="bg-[#0e0e0e] rounded-2xl p-8 shadow-xl border border-gray-800/40">
           {/* Back */}
-          <a
+          <Link
             href="/events"
             className="inline-flex items-center mb-6 text-gray-300 hover:text-white transition"
           >
             ← Back to Events
-          </a>
+          </Link>
 
           {/* Title */}
           <h1 className="text-4xl md:text-5xl font-bold mb-6">

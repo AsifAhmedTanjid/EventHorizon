@@ -2,7 +2,9 @@ import React from "react";
 import EventCard from "./EventCard";
 
 const UpcomingEvents = async () => {
-  const res = await fetch("https://event-horizon-server.vercel.app/upcoming-event");
+  const res = await fetch("https://event-horizon-server.vercel.app/upcoming-event", {
+    cache: "no-store",
+  });
   const events = await res.json();
 
   return (

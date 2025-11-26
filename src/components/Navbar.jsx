@@ -119,7 +119,7 @@ const Navbar = () => {
         {loading ? (
           <MoonLoader
             color="#415aff"
-            size={5}
+            size={20}
             cssOverride={{ display: "inline-block" }}
           />
         ) : user ? (

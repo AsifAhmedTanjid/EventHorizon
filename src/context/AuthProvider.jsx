@@ -41,6 +41,7 @@ const AuthProvider = ({ children }) => {
   };
   const signoutUserFunc = () => {
     setLoading(true);
+    document.cookie = "authToken=; Max-Age=0; path=/;";
     return signOut(auth);
   };
 
@@ -57,9 +58,16 @@ const AuthProvider = ({ children }) => {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (currUser) => {
+    const unsubscribe = onAuthStateChanged(auth, async(currUser) => {
       // console.log(currUser);
       setUser(currUser);
+      if(currUser){
+        const token = await currUser.getIdToken();
+        document.cookie = `authToken=${token}; path=/;`;
+      }
+      else{
+        document.cookie = "authToken=; Max-Age=0; path=/;";
+      }
       setLoading(false);
     });
 

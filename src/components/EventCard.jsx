@@ -7,7 +7,7 @@ const EventCard = ({ event }) => {
     event.description.split(" ").slice(0, 10).join(" ") + "...";
 
   return (
-    <div className="border text-white rounded-lg shadow-lg overflow-hidden hover:scale-105 transform transition duration-300">
+    <div className="border text-white rounded-lg shadow-lg overflow-hidden hover:scale-102 transform transition duration-300">
       <Image
         height={192}
         width={400}
