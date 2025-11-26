@@ -1,6 +1,6 @@
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-black text-gray-200 flex flex-col items-center px-6 py-16">
+    <div className="min-h-screen bg-black text-gray-200 flex flex-col items-center px-6 py-10">
       <h1 className="text-4xl font-bold text-white mb-6">
         About EventHorizon
       </h1>
