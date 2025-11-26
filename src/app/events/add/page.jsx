@@ -142,10 +142,10 @@ const AddEvent = () => {
               >
                 <option value="">Select Category</option>
                 <option value="Music">Music</option>
-                <option value="Art">Art</option>
+                <option value="Arts&Culture">Arts & Culture</option>
                 <option value="Tech">Tech</option>
-                <option value="Science Fiction">Science Fiction</option>
-                <option value="Gaming">Gaming</option>
+                <option value="Business">Business</option>
+                <option value="Sports">Sports</option>
                 <option value="Workshops">Workshops</option>
               </select>
             </div>
@@ -163,7 +163,7 @@ const AddEvent = () => {
           </div>
 
           <div className="text-center">
-            <button className="bg-cyan-500 text-black py-2 px-6 rounded-lg hover:bg-cyan-600 transition hover:cursor-pointer">
+            <button className="bg-blue-600 text-white font-semibold px-6 py-3 rounded-full shadow hover:bg-blue-700 transition hover:cursor-pointer">
               Add Event
             </button>
           </div>
