@@ -143,10 +143,10 @@ const Navbar = () => {
                 <h5 className="text-xs font-semibold">{user?.email}</h5>
               </div>
               <li>
-                <Link href="/addevent">Add Event</Link>
+                <Link href="/events/add">Add Event</Link>
               </li>
               <li>
-                <Link href="/manageevent">Manage Event</Link>
+                <Link href="/events/manage">Manage Event</Link>
               </li>
               <li>
                 <button
