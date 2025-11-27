@@ -7,33 +7,36 @@ export default function Newsletter() {
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (!email) return toast.error("Please enter an email");
+const handleSubscribe = async (e) => {
+  e.preventDefault();
 
-    setLoading(true);
+  if (!email) return toast.error("Please enter an email");
 
-    try {
-      const res = await fetch("/api/subscribe", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ email }),
-      });
+  setLoading(true);
 
-      const data = await res.json();
+  try {
+    const res = await fetch("/api/subscribe", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email }),
+    });
 
-      if (data.success) {
-        toast.success("Subscribed successfully! Check your email");
-        setEmail("");
-      } else {
-        toast.error("Subscription failed. Try again.");
-      }
-    } catch (err) {
-      toast.error("Something went wrong.");
+    const data = await res.json();
+
+    if (data.success) {
+      toast.success("Subscribed successfully! Check your inbox/spam folder");
+      setEmail(""); 
+    } else {
+      
+      toast.error(data.error || "Subscription failed. Try again.");
     }
+  } catch (err) {
+    console.error(err);
+    toast.error("Something went wrong. Check your internet connection.");
+  }
 
-    setLoading(false);
-  };
+  setLoading(false);
+};
 
   return (
     <section className="py-16  text-white">
