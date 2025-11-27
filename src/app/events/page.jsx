@@ -42,7 +42,7 @@ export default function AllEvents() {
         </p>
 
         
-        <div className="flex justify-end mb-10 gap-4">
+        <div className="flex flex-col-reverse md:flex-row justify-end mb-10 gap-4">
           <input
             type="text"
             placeholder="Search events..."
@@ -69,7 +69,7 @@ export default function AllEvents() {
         
         {loading ? (
           <div className="h-[60vh] flex items-center justify-center">
-            <MoonLoader size={64}></MoonLoader>
+            <MoonLoader size={64} color="#ffffff"></MoonLoader>
           </div>
         ) : events?.length ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">

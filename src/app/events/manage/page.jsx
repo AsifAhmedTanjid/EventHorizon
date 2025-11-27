@@ -4,6 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import ManageEvents from "@/components/ManageEvents"; 
 import Link from "next/link";
 import toast from "react-hot-toast";
+import { MoonLoader } from "react-spinners";
 const ManagePage = () => {
   const { user } = useContext(AuthContext);
   const [events, setEvents] = useState([]);
@@ -63,21 +64,35 @@ const ManagePage = () => {
     }
   };
 
-  if (loading) return <div className="text-center py-20 text-gray-400">Loading your events...</div>;
-  if (events.length === 0)
-    return <div className="min-h-130 flex items-center justify-center flex-col">
-      <div className="text-center py-20 text-gray-400">You haven&apos;t created any events yet.</div>
-      <Link href="/events/add" className=" btn border border-blue-500  text-white py-2 rounded-md hover:border-blue-500 hover:bg-blue-500 hover:text-black
-                         hover:cursor-pointer transition">Add Event
-      </Link>
-    </div>;
 
-  return (
-    <div className="max-w-7xl mx-auto p-10">
-      <h2 className="text-4xl font-bold mb-6 text-white text-center">Manage Your Events</h2>
-      <ManageEvents events={events}  handleDelete={handleDelete}/>
-    </div>
-  );
+
+ return (
+  <div className="max-w-7xl mx-auto p-10">
+    <h2 className="text-4xl font-bold mb-6 text-white text-center">
+      Manage Your Events
+    </h2>
+    {loading ? (
+      <div className="h-[60vh] flex items-center justify-center">
+        <MoonLoader size={64} color="#ffffff" />
+      </div>
+    ) : events.length === 0 ? (
+      <div className="min-h-130 flex items-center justify-center flex-col">
+        <div className="text-center py-20 text-gray-400">
+          You haven&apos;t created any events yet.
+        </div>
+        <Link
+          href="/events/add"
+          className="btn border border-blue-500 text-white py-2 rounded-md hover:border-blue-500 hover:bg-blue-500 hover:text-black transition"
+        >
+          Add Event
+        </Link>
+      </div>
+    ) : (
+      <ManageEvents events={events} handleDelete={handleDelete} />
+    )}
+  </div>
+);
+
 };
 
 export default ManagePage;
