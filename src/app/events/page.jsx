@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import EventCard from "@/components/EventCard";
-import { MoonLoader } from "react-spinners";
+// import { MoonLoader } from "react-spinners";
 
 
 export default function AllEvents() {
@@ -30,6 +30,13 @@ export default function AllEvents() {
    
     fetchEvents();
   }, [search]); 
+
+  const skeletons = Array.from({ length: 21 }).map((_, i) => (
+    <div
+      key={i}
+      className="bg-neutral-800 animate-pulse h-122 rounded-xl w-full"
+    ></div>
+  ));
 
   return (
     <section className="pt-10 bg-black text-white min-h-screen">
@@ -68,8 +75,11 @@ export default function AllEvents() {
 
         
         {loading ? (
-          <div className="h-[60vh] flex items-center justify-center">
-            <MoonLoader size={64} color="#ffffff"></MoonLoader>
+          // <div className="h-[60vh] flex items-center justify-center">
+          //   <MoonLoader size={64} color="#ffffff"></MoonLoader>
+          // </div>
+           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {skeletons}
           </div>
         ) : events?.length ? (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
