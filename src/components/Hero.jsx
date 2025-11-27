@@ -31,11 +31,14 @@ export default function Hero() {
         </div>
         <div className="lg:w-1/2 mt-12 lg:mt-0 flex justify-center lg:justify-end">
           <Image
-            src="/hero.png"
+            src="/hero.webp"
             alt="Event Illustration"
             width={500}
             height={400}
             className="rounded-lg"
+            priority
+            placeholder="blur"
+            blurDataURL="/hero.webp"
           />
         </div>
       </div>
